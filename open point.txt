@@ -1,0 +1,5 @@
+1. Finish the tutorial in subtree.txt - arrived at Line 32
+
+2. start and finish the readme file
+
+3. Make this and the other repo public

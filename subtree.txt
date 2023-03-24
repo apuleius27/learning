@@ -11,23 +11,31 @@ Use git tree diff between subtree and branch if necessary
 
 
 
+a. In case you are ever asked for a login, follow this guide to get the authentication token and login to github via terminal: https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+b. The following are the steps I first followed to understand how subtrees work. You can read the following steps and/or reproduce them by creating 2 repos in your account:
+1. One named 'learning' - which will be the one in which you will add the subtree
+2. The other named 'learning-doc' - which will be used as subtree in the repo above
+
+When creating the repos, flag the option to create the 'README.md' file so your initial branch will be named 'main'
+
+
+
 HOW TO ADD A SUBTREE?
 
-0. Go on the branch and location where you would like to add the subtree.
-For this first step, we add a first working subtree to the main branch. Later on we can study and practice how to use subtrees in a new branch (not to mess anything up).
+0. On your computer, locally, open terminal and go inside the repo 'learning'.
+Then activate the 'main' branch by typing the following:
 > git branch (-a) --> to list the branches of the repo
-> git checkout main --> to select the main branch (or it could be master in some cases - not this one)
+> git checkout main --> to select the main branch (or it could be master in some cases - not this case)
 
-1. Use an alias for the repo to be used as a subtree to make it easier to refer to the repo.
-> git remote add learning-doc https://github.com/apuleius27/learning-doc --> we add the learning-doc repo to the remotes
+1. Use an alias for the repo to be used as a subtree to make it easier to refer to the repo
+> git remote add learning-doc https://github.com/apuleius27/learning-doc --> we add the learning-doc repo to the remotes (you can use your own repo - e.g. https://github.com/your-github-username/learning-doc)
 > git remote -v --> to list the added remotes
 
-2. Add the repo to be used as subtree.
-> git subtree add --prefix SUB learning-doc main --squash --> this will create the folder SUB and pull the data in it from the learning-doc remote (that we added before) and from the main branch of that remote
+2. Add the subtree by pulling the repo 'learning-doc' in this way:
+> git subtree add --prefix SUB learning-doc main --squash --> this will create the folder 'SUB' and pull the data in it from the 'learning-doc' remote (that we added before) and from the 'main' branch of that remote
 
-The above step will ask for a login. Follow this guide to get the authentication token and login: https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
-
-3. Publish the changes. Either use github desktop (if possible, since it is easier) - or do the following - to publish the changes:
+3. Publish the changes. Either use github desktop (since it is easier) - or do the following - to publish the changes:
 > git commit
 > git push
 
