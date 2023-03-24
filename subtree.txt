@@ -25,7 +25,11 @@ For this first step, we add a first working subtree to the main branch. Later on
 2. Add the repo to be used as subtree.
 > git subtree add --prefix SUB learning-doc main --squash --> this will create the folder SUB and pull the data in it from the learning-doc remote (that we added before) and from the main branch of that remote
 
-3. do git push to publish the changes.. if cannot login via terminal, then update using github desktop
+The above step will ask for a login. Follow this guide to get the authentication token and login: https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+3. Publish the changes. Either use github desktop (if possible, since it is easier) - or do the following - to publish the changes:
+> git commit
+> git push
 
 
 how to update subtree?
