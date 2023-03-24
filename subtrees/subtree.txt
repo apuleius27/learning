@@ -1,14 +1,3 @@
-CsvToDmnConverter is a subtree
-
-
-The original gitignore of CsvToDmnConverter looks like this:
-.idea/ 
-target/ 
-CsvToDmnConverter.iml 
-
-
-However, I want to provide the converter already compiled, so I commented the target/ part.
-
 
 How to update the subtree?
 
