@@ -11,10 +11,16 @@ Use git tree diff between subtree and branch if necessary
 
 
 
-how to add subtree?
+HOW TO ADD A SUBTREE?
 
-1. add a remote to make it easier to refer to the remote repo
-e.g. add remote mva https://github.com/apuleius27/MVA-minimum-variance-algorithm
+0. Go on the branch where you would like to add the subtree.
+For this first step, we add a first working subtree to the main branch. Later we can study and practice how to use subtrees in a new branch (not to mess anything up).
+> git branch (-a) --> to list the branches of the repo
+> git checkout main --> to select the main branch (or it could be master in some cases - not this one)
+
+1. Use an alias for the repo to be used as a subtree to make it easier to refer to the repo.
+> git remote add learning-sub https://github.com/apuleius27/learning-sub --> we add the learning-sub repo to the remotes
+> git remote -v --> to list the added remotes
 
 2. use subtree command to make a directory and pull the repo
 e.g. git subtree add --prefix MVA mva main --squash
