@@ -40,10 +40,16 @@ Then activate the 'main' branch by typing the following:
 > git push
 
 
-how to update subtree?
+HOW TO UPDATE A SUBTREE?
 
-1. fetch the remote repo to see if there are any changes. If no changes, then no need to update anything. If changes, then step 2.
-e.g. git fetch mva master
+1. Fetch the remote repo to see if there are any changes.
+> git fetch learning-doc main --> this will fetch the 'main' branch from the repo 'learning-doc'
+
+If no changes, then no need to update anything.
+If there are changes, then follow step 2.
+
+
+
 
 2. fetch and merge the changes automatically by using the following:
 git subtree pull --prefix MVA mva master --squash
