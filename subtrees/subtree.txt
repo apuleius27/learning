@@ -24,7 +24,7 @@ For this first step, we add a first working subtree to the main branch and insid
 > git remote -v --> to list the added remotes
 
 2. Add the repo to be used as subtree.
-> git subtree add --prefix SUB learning-sub main --squash --> this will create the folder SUB and pull the data in it from the learning-sub remote (that we added before)
+> git subtree add --prefix subtrees/SUB learning-sub main --squash --> this will create the folder SUB inside the folder subtrees (since subtree add can only be used from within the toplevel of the working tree) and pull the data in it from the learning-sub remote (that we added before) and from the main branch
 
 3. do git push to publish the changes.. if cannot login via terminal, then update using github desktop
 
