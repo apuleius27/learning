@@ -14,17 +14,16 @@ Use git tree diff between subtree and branch if necessary
 HOW TO ADD A SUBTREE?
 
 0. Go on the branch and location where you would like to add the subtree.
-For this first step, we add a first working subtree to the main branch and inside the folder subtrees. Later on we can study and practice how to use subtrees in a new branch (not to mess anything up).
+For this first step, we add a first working subtree to the main branch. Later on we can study and practice how to use subtrees in a new branch (not to mess anything up).
 > git branch (-a) --> to list the branches of the repo
 > git checkout main --> to select the main branch (or it could be master in some cases - not this one)
-> cd subtrees --> we move inside the folder subtrees
 
 1. Use an alias for the repo to be used as a subtree to make it easier to refer to the repo.
-> git remote add learning-doc https://github.com/apuleius27/learning-sub --> we add the learning-doc repo to the remotes
+> git remote add learning-doc https://github.com/apuleius27/learning-doc --> we add the learning-doc repo to the remotes
 > git remote -v --> to list the added remotes
 
 2. Add the repo to be used as subtree.
-> git subtree add --prefix subtrees/SUB learning-doc main --squash --> this will create the folder SUB inside the folder subtrees (since subtree add can only be used from within the toplevel of the working tree) and pull the data in it from the learning-doc remote (that we added before) and from the main branch
+> git subtree add --prefix SUB learning-doc main --squash --> this will create the folder SUB and pull the data in it from the learning-doc remote (that we added before) and from the main branch of that remote
 
 3. do git push to publish the changes.. if cannot login via terminal, then update using github desktop
 
