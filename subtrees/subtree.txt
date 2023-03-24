@@ -22,9 +22,8 @@ For this first step, we add a first working subtree to the main branch. Later we
 > git remote add learning-sub https://github.com/apuleius27/learning-sub --> we add the learning-sub repo to the remotes
 > git remote -v --> to list the added remotes
 
-2. use subtree command to make a directory and pull the repo
-e.g. git subtree add --prefix MVA mva main --squash
-this will create the folder MVA and pull the mva remote added before and will pull from the main branch of the remote repo
+2. Add the repo to be used as subtree.
+> git subtree add --prefix SUB learning-sub main --squash --> this will create the folder SUB and pull the data in it from the learning-sub remote (that we added before)
 
 3. do git push to publish the changes.. if cannot login via terminal, then update using github desktop
 
