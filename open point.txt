@@ -1,4 +1,4 @@
-1. Finish the tutorial in subtree.txt - arrived at Line 32
+1. Finish the tutorial in subtree.txt
 
 2. start and finish the readme file
 
