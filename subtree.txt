@@ -101,7 +101,7 @@ Using GUI:
 Then delete the new subtree folder:
 > git rm SUB2 -r -f
 
-5. we open a pull request and merge this new branch with the main branch (or simply use git push), then delete this "new" branch
+5. we open a pull request and merge this new branch with the main branch (from github desktop and/or online). If you want to use command line, follow this guide as a strating point: https://stackoverflow.com/questions/37770467/why-do-i-have-to-git-push-set-upstream-origin-branch
 
 Using command line:
 There are better ways, but this is my idea at the moment:
@@ -118,6 +118,8 @@ e.g. git rm SUB -r -f
 4. do a difference between the two branches
 e.g. from the branch we are modifying, do:
 > git diff main
+
+5. merge the branches and so on
 
 
 HOW TO RESET A SUBTREE?
