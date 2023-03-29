@@ -47,19 +47,21 @@ Then activate the 'main' branch by typing the following:
 
 HOW TO UPDATE A SUBTREE?
 
+a. To update a subtree automatically and without the need to check for the differences, follow the steps below. This method is recommended:
+- When you use a subtree without modifying any of the files inside it, and
+- When there are zero integrations between the subtree and the repo in which the subtree is pulled
+
 1. Fetch the remote repo to see if there are any changes.
 > git fetch learning-doc main --> this will fetch the 'main' branch from the repo 'learning-doc'
 
 If no changes, then no need to update anything.
 If there are changes, then follow step 2.
 
-
-
-
 2. fetch and merge the changes automatically by using the following:
-git subtree pull --prefix MVA mva master --squash
+git subtree pull --prefix SUB learning-doc main --squash
 
 
+b. In case you want to see the modifications made to 
 how to make changes to a subtree (e.g. if i want to improve some functions) and then update the subtree with modifications made to the repo?
 
 If i add a file to the subtree, it remains after the merge
