@@ -2,6 +2,6 @@
 
 2. start and finish the readme file
 
-3. Make this and the other repo public
+3. Make this and the other repo public - done
 
 4. Convert the subtree.txt in markdown or latex?
