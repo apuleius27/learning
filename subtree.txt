@@ -101,6 +101,9 @@ Using GUI:
 Then delete the new subtree folder:
 > git rm SUB2 -r -f
 
+5. Exit from the current branch
+> git checkout main
+
 5. we open a pull request and merge this new branch with the main branch (from github desktop and/or online). If you want to use command line, follow this guide as a strating point: https://stackoverflow.com/questions/37770467/why-do-i-have-to-git-push-set-upstream-origin-branch
 
 Using command line:
