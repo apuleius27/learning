@@ -14,9 +14,9 @@ Use git tree diff between subtree and branch if necessary
 a. In case you are ever asked for a login, follow this guide to get the authentication token and login to github via terminal: https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 b. In case you changed your token and/or need to reset it, do the following:
-- Check the value of credential manager. > git config --system credential.helper --> Note this value for later; you will need it to set things back.
-- Unset the credential manager, which will prompt you for PW going forward. > git config --system --unset credential.helper
-Next time you will be asked to insert the username and password again
+- Check the value of credential manager. > git config --system credential.helper --> Note the output value for later; you will need it to set things back (e.g. osxkeychain)
+- Unset the credential manager, which will prompt you for PW going forward. > git config --system --unset credential.helper --> Going forward, you will be prompted to insert the username and password again
+- Set the value of the credential manager back to what it was e.g. osxkeychain in my case: git config --system credential.helper osxkeychain --> use the value you noted at the first step
 
 c. The following steps are the ones I first followed to understand how subtrees work. You can read the following steps and/or reproduce them by creating 2 repos in your account:
 1. One named 'learning' - which will be the one in which you will add the subtree
