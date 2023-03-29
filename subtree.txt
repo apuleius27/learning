@@ -18,7 +18,10 @@ b. In case you changed your token and/or need to reset it, do the following:
 - Unset the credential manager, which will prompt you for PW going forward. > git config --system --unset credential.helper --> Going forward, you will be prompted to insert the username and password again
 - Set the value of the credential manager back to what it was e.g. osxkeychain in my case: git config --system credential.helper osxkeychain --> use the value you noted at the first step
 
-c. The following steps are the ones I first followed to understand how subtrees work. You can read the following steps and/or reproduce them by creating 2 repos in your account:
+c. In case, when doing merges, you are shown a vi/vim terminal, then just do:
+> :wq
+
+d. The following steps are the ones I first followed to understand how subtrees work. You can read the following steps and/or reproduce them by creating 2 repos in your account:
 1. One named 'learning' - which will be the one in which you will add the subtree
 2. The other named 'learning-doc' - which will be used as subtree in the repo above
 
@@ -94,7 +97,9 @@ Using GUI:
 3. Use meld to compare the differences. We can open meld and compare the folders with the gui, or we can type the following:
 > meld SUB SUB2 --> this will open meld and compare the two folders
 
-4. We decide what to keep or delete and so on, then we merge (either manually/graphically) or, in case the modifications are fine, we follow the merge process described above
+4. We decide what to keep or delete and so on, then we merge (either manually/graphically) or, in case the modifications are fine, we follow the merge process described above.
+Then delete the new subtree folder:
+> git rm SUB2 -r -f
 
 5. we open a pull request and merge this new branch with the main branch (or simply use git push), then delete this "new" branch
 
@@ -113,6 +118,13 @@ e.g. git rm SUB -r -f
 4. do a difference between the two branches
 e.g. from the branch we are modifying, do:
 > git diff main
+
+
+HOW TO RESET A SUBTREE?
+
+> git rm SUB -r -f
+> git subtree add --prefix SUB learning-doc main --squash
+
 
 
 
