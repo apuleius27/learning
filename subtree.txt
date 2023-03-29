@@ -1,16 +1,4 @@
 
-How to update the subtree?
-
-Do a fetch on the remote, if no changes then good
-If changes then create a local branch of the subtree pointing to camunda converter using a remote, pull the new data, compile and then merge
-with the subtree in the main branch
-can keep the local branch in order to see how many commits behind we are with respect to the remote
-
-
-Use git tree diff between subtree and branch if necessary
-
-
-
 a. In case you are ever asked for a login, follow this guide to get the authentication token and login to github via terminal: https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
 b. In case you changed your token and/or need to reset it, do the following:
