@@ -82,6 +82,8 @@ Using GUI:
 
 0. Install MELD (see other guides) so that we can use it to compare the differences
 
+00. Modify a file in the subtree repo (e.g. modify the markdown file) so we can follow the steps below
+
 1. create a new branch and go in there
 > git branch new
 > git checkout new
