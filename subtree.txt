@@ -61,30 +61,57 @@ If there are changes, then follow step 2.
 git subtree pull --prefix SUB learning-doc main --squash
 
 
-b. In case you want to see the modifications made to 
-how to make changes to a subtree (e.g. if i want to improve some functions) and then update the subtree with modifications made to the repo?
+b. In case you want to see the modifications made to the subtree repo before merging and/or merge only parts of the subtree, then follow the steps below. 
+Keep in mind that:
+- If you add a file to the subtree, it remains after the merge with subtree repo
+- If you delete a file from the subtree, it is NOT added back after the merge with subtree repo
 
-If i add a file to the subtree, it remains after the merge
-If i delete a file from the subtree, it is NOT added back after the merge
+This method is recommended:
+- To deal with the above situations. E.g. when you want to delete a file you added but the subtree repo does not have
+- E.g. when you want to make changes to a subtree (e.g. if you want to improve some functions) and then update the subtree with modifications made to the subtree repo
+- When the subtree has integrations with the repo you are using, so you want to test that modifications don't break the code (for this situation, a good paractice is to have tests in place for the code - out of scope from this guide)
 
-so, how to see the differences?
 
-if using only command line, my idea is the following:
+There are many ways to do what is explained at the point b. above, but here is my idea.
+
+We have two options:
+- Using GUI 
+- Using command line
+
+Using GUI:
+
+0. Install MELD (see other guides) so that we can use it to compare the differences
 
 1. create a new branch and go in there
-e.g. git branch new
-git checkout new
+> git branch new
+> git checkout new
+
+2. pull the subtree and "save it" in a different folder than where the original subtree is saved
+> git subtree add --prefix SUB2 learning-doc main --squash --> new subtree added in folder "SUB2"
+
+3. Use meld to compare the differences. We can open meld and compare the folders with the gui, or we can type the following:
+> meld SUB SUB2 --> this will open meld and compare the two folders
+
+4. We decide what to keep or delete and so on, then we merge (either manually/graphically) or, in case the modifications are fine, we follow the merge process described above
+
+5. we open a pull request and merge this new branch with the main branch (or simply use git push), then delete this "new" branch
+
+Using command line:
+There are better ways, but this is my idea at the moment:
+
+1. 1. create a new branch and go in there
+> git branch new
+> git checkout new
 
 2. delete the subtree repo in it and then git push to publish changes
-e.g. git rm MVA -r -f
+e.g. git rm SUB -r -f
 
 3. add subtree (cf. points above).. this should add the whole subtree (e.g. adding any file that was removed and deleting added files)
 
 4. do a difference between the two branches
-e.g. from the branch we are modifying, do git diff main
+e.g. from the branch we are modifying, do:
+> git diff main
 
 
-if instead we want and can use a gui, we can use meld. Install meld (see guides)
 
-we can follow procedure above or we can create a new subtree and clone/pull the remote repo there and then we use meld to do the diff between the two subtrees (the old one and the new one just pulled) and decide how to merge.
-e.g. meld file1 file2
+
